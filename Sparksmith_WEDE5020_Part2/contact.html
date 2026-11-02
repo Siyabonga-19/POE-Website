@@ -4,14 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Contact Sparksmith Electrical Services or submit an electrical service enquiry.">
+<meta name="keywords" content="contact electrician Johannesburg, electrical quote Gauteng, electrical enquiry, urgent electrician">
+<meta name="theme-color" content="#102a43">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Sparksmith Electrical Services">
+<meta property="og:description" content="Find the proposed Johannesburg service area and submit an electrical enquiry.">
 <title>Contact & Enquiry | Sparksmith Electrical Services</title>
+<link rel="icon" href="images/sparksmith-mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/script.js" defer></script>
 </head>
 <body>
 <div class="topbar"><div class="container"><span>Johannesburg & Gauteng</span><span>Emergency support: <strong>Contact us for assistance</strong></span></div></div>
 <header class="site-header"><div class="container nav">
 <a class="logo" href="index.html">SPARKSMITH<span>Electrical Services</span></a>
-<nav aria-label="Main navigation"><ul class="nav-links">
+<button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+<nav id="primary-navigation" aria-label="Main navigation"><ul class="nav-links">
 <li><a class="" href="index.html">Home</a></li>
 <li><a class="" href="about.html">About Us</a></li>
 <li><a class="" href="services.html">Services</a></li>
@@ -28,18 +36,19 @@
 <div class="contact-item"><strong>Hours</strong>Monday–Saturday, 07:00–18:00</div>
 <div class="contact-item"><strong>Emergency requests</strong>Use the form and identify the request as urgent.</div>
 </div>
-<div class="card"><h2>Enquiry / Quote Request</h2><div class="notice">This Part 2 version focuses on CSS styling and responsiveness. Form validation and interactive functionality are planned for Part 3.</div>
-<form action="#" method="post" enctype="multipart/form-data">
-<div class="form-grid"><div><label for="name">Full Name *</label><input id="name" name="name" required></div><div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required></div></div>
-<div class="form-grid"><div><label for="email">Email *</label><input id="email" name="email" type="email" required></div><div><label for="service">Service Category *</label><select id="service" name="service" required><option value="">Select a service</option><option>Residential Wiring</option><option>Lighting Installation</option><option>Fault-Finding & Repairs</option><option>Electrical Compliance</option><option>Emergency Electrical Support</option><option>Small Office Maintenance</option></select></div></div>
-<div><label for="description">Describe the electrical requirement *</label><textarea id="description" name="description" required></textarea></div>
+<div class="card"><h2>Enquiry / Quote Request</h2><div class="notice">Academic demo only: fields are checked in your browser, but this form does not transmit or store enquiries. Contact the business directly for assistance.</div>
+<form id="enquiry-form" action="#" method="post">
+<div class="form-grid"><div><label for="name">Full Name *</label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required></div><div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+() -]{7,20}" title="Enter 7 to 20 digits, spaces, or phone symbols." required></div></div>
+<div class="form-grid"><div><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="120" required></div><div><label for="service">Service Category *</label><select id="service" name="service" required><option value="">Select a service</option><option value="Residential Wiring">Residential Wiring</option><option value="Lighting Installation">Lighting Installation</option><option value="Fault-Finding & Repairs">Fault-Finding & Repairs</option><option value="Electrical Compliance">Electrical Compliance</option><option value="Emergency Electrical Support">Emergency Electrical Support</option><option value="Small Office Maintenance">Small Office Maintenance</option></select></div></div>
+<div><label for="description">Describe the electrical requirement *</label><textarea id="description" name="description" minlength="15" maxlength="1200" required></textarea><p class="small">Please provide at least 15 characters so the requirement is clear.</p></div>
 <div class="form-grid"><div><label for="date">Preferred Date</label><input id="date" name="date" type="date"></div><div><label for="time">Preferred Time</label><input id="time" name="time" type="time"></div></div>
-<div><label for="photo">Photo of issue (optional)</label><input id="photo" name="photo" type="file" accept="image/*"></div>
-<div><label><input type="checkbox" name="emergency" style="width:auto;margin-right:.4rem"> This is an emergency request</label></div>
-<button class="btn btn-primary" type="submit">Submit Enquiry</button>
+<div><label for="photo">Photo of issue (optional; up to 5 MB)</label><input id="photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp"></div>
+<div><label class="checkbox-label" for="emergency"><input id="emergency" name="emergency" type="checkbox"> This is an emergency request</label><p class="small" id="urgency-note" aria-live="polite">Standard request selected. This demo does not send enquiries.</p></div>
+<p id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+<button class="btn btn-primary" type="submit">Check Enquiry</button>
 </form></div></div></section>
 <section class="section section-alt"><div class="container"><div class="section-title"><h2>Service Area Map</h2><p>The map shows Johannesburg as the proposed service area for this academic prototype.</p></div>
-<div class="map-wrap"><iframe title="Johannesburg service area map" src="https://www.openstreetmap.org/export/embed.html?bbox=28.00%2C-26.30%2C28.20%2C-26.10&amp;layer=mapnik" loading="lazy"></iframe></div>
+<div class="map-wrap"><iframe title="Johannesburg service area map from OpenStreetMap" src="https://www.openstreetmap.org/export/embed.html?bbox=28.00%2C-26.30%2C28.20%2C-26.10&amp;layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 <p class="small"><a href="https://www.openstreetmap.org/?mlat=-26.2041&amp;mlon=28.0473#map=12/-26.2041/28.0473" target="_blank" rel="noopener">Open the Johannesburg map in OpenStreetMap</a></p></div></section>
 </main>
 <footer><div class="container footer-grid">
